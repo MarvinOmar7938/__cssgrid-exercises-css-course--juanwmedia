@@ -1,0 +1,57 @@
+/* GRID Container */
+main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  font-family: sans-serif;
+  /* 1. Classic*/
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+
+  /* 2. repeat() */
+  grid-template-columns: repeat(8, 1fr);
+
+  /* 
+    minmax(): 
+    Estableciendo el mínimo y el máximo
+
+    ⚠️ 🔴 Genera en algunos SCROLL horizontal o vertical ⚠️ 🔴
+  */
+
+  /* 3. minmax(): */
+  /* 8 columns 
+       - minimo: 10px 
+       - maximo: flexible (1fr) 
+  */
+  /* grid-template-columns: repeat(8, minmax(10px, 1fr)); */
+
+  /* 4.  8 columns con un 'patron' de 2 columns de 30px.
+       - minimo: 10%
+       - maximo: flexible (1fr) 
+  */
+  /* Es '4' porque 8 elements / 2 = 4 :) */
+  grid-template-columns: repeat(4, 30px minmax(10%, 1fr));
+
+  /* 5. minmax(): Estableciendo el mínimo y el máximo */
+  /* 8 columns 
+       - minimo: marcado por su 'contenido'
+       - maximo: 30%
+  */
+  /* grid-template-columns: repeat(8, minmax(min-content, 30%)) */
+
+  /* 6. minmax(): Estableciendo el mínimo y el máximo */
+  /* 8 columns 
+       - minimo: marcado por su 'contenido'
+       - maximo: marcado por su 'contenido'
+  */
+  /* grid-template-columns: repeat(8, minmax(min-content, max-content)) */
+
+
+}
+
+div {
+  align-items: center;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+}
+

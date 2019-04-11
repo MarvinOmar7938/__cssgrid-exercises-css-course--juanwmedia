@@ -1,0 +1,51 @@
+/* GRID Container */
+main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  font-family: sans-serif;
+
+  /*   
+  12 columns con un 'patron' de 👉3 columns👈:
+    - 1era. 'minimo': 100px, 'maximo:' 1fr
+    - 2da. 'minimo': 40px, 'maximo:' 1fr
+    - 3ra. 'minimo': 20px, 'maximo:' 1fr
+  
+  Calculo EXTRA:
+   12 / 3 = 4
+  */
+
+  /* 
+  grid-template-columns: 
+    repeat(4, 
+      minmax(100px, 1fr)  
+      minmax(40px, 1fr)  
+      minmax(20px, 1fr)  
+    );
+  */
+
+  /* Named GRID Lines */
+  grid-template-columns: 
+    [start]
+    repeat(4, 
+      [col-lg-start] minmax(100px, 1fr)  
+      [col-lg-end col-md-start] minmax(40px, 1fr)  
+      [col-md-end col-sm-start] minmax(20px, 1fr)  
+    )
+    [end]
+    ;
+}
+
+div {
+  align-items: center;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+}
+
+.col_1 {
+  background-color: purple;
+  color: white;
+  grid-column: col-lg-start / col-md-end;
+}
+

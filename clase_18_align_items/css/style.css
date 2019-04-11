@@ -1,0 +1,25 @@
+/* Basic CSS */
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: goldenrod;
+}
+
+/* GRID Container */
+main {
+  display: grid;
+  grid-gap: 10px;
+  font-family: sans-serif;
+
+  /* Rows / Columns */
+  grid-template: 
+    repeat(4, 50px) / repeat(3, 1fr);
+
+  /* row-axis */
+  justify-items: stretch;
+
+  /* column-axis */
+  /* stretch - for default */
+  align-items: stretch;
+}

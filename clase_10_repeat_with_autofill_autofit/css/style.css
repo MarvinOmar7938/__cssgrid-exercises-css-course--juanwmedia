@@ -1,0 +1,67 @@
+section {
+  display: grid;
+  grid-gap: 10px;
+  font-family: sans-serif;
+  margin: 20px 0;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  text-align: center;
+}
+
+.auto-fill div {
+  background-color: goldenrod;
+}
+
+.auto-fit div {
+  background-color: purple;
+  color: white;
+}
+
+.auto-fill {
+  /* 4 columns
+  - minimo: 100px
+  - maximo: 1fr */
+  /* grid-template-columns: repeat(4, minmax(100px, 1fr)) */
+
+  /* 
+    ⭐⭐  auto-fill 😄😄 
+    Crea los GRID tracks "VACIOS"
+    que puedan 
+    👉 caber en nuestro 'GRID Container' 👈
+    y por supuesto "no provoquen un desborde"
+    del GRID Container
+
+    ⚠️⚠️ los "mantiene" aun 
+    si ellos estan 
+    🔴 vacios  o no se estan utilizando🔴.
+  */
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.auto-fit {
+  /* 
+    ⭐⭐  auto-fit 😄😄 
+    (similar a `auto-fill`, pero hay diferencias)
+
+    Crea los GRID tracks "VACIOS"
+    que puedan 
+    👉 caber en nuestro 'GRID Container' 👈
+    y por supuesto "no provoquen un desborde"
+    del GRID Container
+
+    ✔️ Diferencias con `auto-fill`
+    ⚠️ 1. Sí hay GRID tracks "VACIOS" repetidos
+    estos  se 🔴"eliminan"🔴 y el 'espacio disponible' generado
+    por esta accion, sera  👉'repartido'👈 con los demas
+    GRID tracks. Logrando que estos 'se extienda'.
+    
+    ⚠️ 2. Ademas, que  cuando 'se extienda'
+    👉genera una 'GRID' distint👈a a la ya definida.
+  */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}

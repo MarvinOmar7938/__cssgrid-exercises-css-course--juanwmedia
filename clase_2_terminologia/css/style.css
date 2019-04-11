@@ -1,0 +1,44 @@
+/* GRID Container */
+main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: goldenrod;
+}
+
+/* GRID Item #10 */
+.item_10 {
+  background-color: purple;
+  /*
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 5;
+  */
+  /* Shorthands */
+
+  grid-row: 3 / 4;
+  grid-column: 3 / 5;
+}
+
+/* GRID Item #6 */
+.item_6 {
+  background-color: purple;
+  /*   
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  */
+  /* Shorthand */
+  grid-row: 2 / 4;
+  grid-column: 2 / 3;
+}

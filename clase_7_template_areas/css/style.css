@@ -1,0 +1,52 @@
+/* GRID Container */
+main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  font-family: sans-serif;
+  grid-template-areas: 
+    "header"
+    "contenido"
+    "derecha"
+    "izquierda"
+    "footer";
+}
+
+main > * {
+  align-items: center;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+}
+
+/* Nombrar las areas */
+header {
+  grid-area: header;
+}
+
+aside:first-of-type {
+  grid-area: derecha;
+}
+
+article {
+  grid-area: contenido;
+}
+
+aside:last-of-type {
+  grid-area: izquierda;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* Punto de ruptura */
+/* width > 500px */
+@media (min-width: 500px){
+  main {
+    grid-template-areas: 
+      "header header derecha"
+      "izquierda contenido derecha"
+      "izquierda footer derecha"
+  }
+}

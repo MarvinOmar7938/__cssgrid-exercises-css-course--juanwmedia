@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: white;
+}
+
+/* GRID CONTAINER */
+main {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  /* ⭐ Explicit GRID ⭐ */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+
+  /* ⭐ Implicit GRID: auto-placement ⭐ */
+  grid-auto-rows: minmax(150px, 1fr);
+  grid-auto-columns: minmax(150px, 1fr);
+
+  /* 
+  ⭐ Flow Of Implicit GRID ⭐
+    - row (⚠️ for default)
+    - column
+  */
+  /* grid-auto-flow: column; */
+
+  /*
+  dense:
+    "tells the auto-placement algorithm 
+     to 👉attempt to fill in holes👈 earlier 
+     in the grid 
+     if smaller items 
+     come up later" by css-tricks.com
+
+     ⚠️⚠️⚠️ Note that 'dense' 
+     might cause your items 
+     to appear out of order.
+  */
+  grid-auto-flow: column dense;
+
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(32, 218, 79);
+  border: 1px solid black;
+}
+
+/* Generate GRID Items with differents sizes */
+section:nth-child(3n) {
+  background-color: purple;
+  grid-column-end: span 2;
+  color: white;
+}
+
+section:nth-child(7n) {
+  background-color: rgb(255, 0, 119);
+  grid-row-end: span 2;
+  color: white;
+}
+
+section:nth-child(12n) {
+  background-color: aqua;
+  grid-column-end: span 3;
+  grid-row-end: span 3;
+  color: black;
+}

@@ -1,0 +1,86 @@
+/* Basic CSS */
+main > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: goldenrod;
+}
+
+/* GRID Container */
+/* main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  font-family: sans-serif; */
+
+  /* 1. Areas */
+  /* grid-template-areas: 
+    "header header header"
+    "izquierda contenido derecha1"
+    "izquierda contenido derecha2"
+    "izquierda footer footer"; */
+
+  /* 2. Columns */
+  /* grid-template-columns: 
+    [inicio] 1fr 
+    [contenido-start] 2fr 
+    1fr [end]; */
+
+  /* 3. Rows */
+  /* grid-template-rows: 
+    [inicio] 1fr 
+    [contenido-start] 1fr 
+    1fr 
+    1fr [end]; */
+/* } */
+
+/*   
+Shorthand:
+ - Areas
+ - Rows
+ - Columns
+ */
+/* GRID Container */
+main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  font-family: sans-serif;
+	
+  /* Shorthand 'grid-template' */
+  
+  /* prettier-ignore */
+	grid-template: 
+    [ini] 'header header header' 1fr
+    [contenido-start] 'left1 info right1' 1fr
+    'left1 info right2' 1fr
+    'left1 footer footer' 1fr [end]
+    /* prettier-ignore */
+    / 
+    [ini] 1fr [info-start] 2fr 1fr [end];    
+}
+
+/* GRID Areas */
+header {
+  grid-area: header;
+}
+
+aside:first-of-type {
+  grid-area: left1;
+}
+
+article {
+  grid-area: info;
+}
+
+aside:nth-of-type(2) {
+  grid-area: right1;
+}
+
+aside:last-of-type {
+  grid-area: right2;
+}
+
+footer {
+  grid-area: footer;
+}

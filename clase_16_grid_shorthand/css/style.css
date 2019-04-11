@@ -1,0 +1,24 @@
+/* Basic CSS */
+main > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: goldenrod;
+}
+
+/* GRID Container */
+main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  font-family: sans-serif;
+  /* Shorthand */
+  /* 
+  - 2 rows: 10fr and 5fr
+  - 2 columns: 2fr and 8fr
+  auto-flow: column 
+  */
+  grid: 
+    /* rows / columns */
+    auto-flow 10fr 5fr / 2fr 8fr;
+}

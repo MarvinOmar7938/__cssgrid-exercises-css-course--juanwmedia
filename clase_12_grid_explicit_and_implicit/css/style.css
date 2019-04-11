@@ -1,0 +1,28 @@
+main {
+  display: grid;
+  height: 100vh;
+  grid-gap: 10px;
+  /* ⭐ Explicit GRID ⭐ */
+  grid-template-columns: 200px 100px; 
+
+  /* ⭐ Auto-placement ⭐ */
+  grid-auto-flow: column;
+
+  /* ⭐ Implicit GRID ⭐ */
+  grid-auto-columns: 300px;
+}
+
+div {
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* ⭐ Explicit GRID ⭐ */
+div:first-of-type,
+div:nth-child(2){
+  background-color: purple;
+  color: white;
+}

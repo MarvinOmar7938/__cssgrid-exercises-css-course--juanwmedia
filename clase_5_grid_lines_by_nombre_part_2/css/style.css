@@ -1,0 +1,37 @@
+/* GRID Container */
+main {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  /* Named Grid Lines  */
+  grid-template-columns:
+    [sidebar-start] 1fr
+    [sidebar-end contenido-start] 2fr /* Ambas GRID Lines se encuentra en la 'misma zona'*/
+    [contenido-end]; /* No requiere la longitud, debido a que es la ultima linea*/
+  grid-template-rows:
+    [header-start] 1fr
+    [header-end contenido-start] 2fr
+    [contenido-end footer-start] 1fr
+    [footer-end];
+}
+
+main > * {
+  align-items: center;
+  background-color: goldenrod;
+  display: flex;
+  font-family: sans-serif;
+  justify-content: center;
+}
+
+header {
+  grid-column: sidebar-start / contenido-end;
+}
+
+/* Sidebar */
+aside {
+  grid-row: contenido-start / footer-end;
+}
+
+footer {
+  grid-column: contenido-start / contenido-end;
+}
